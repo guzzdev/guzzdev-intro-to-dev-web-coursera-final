@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jane DOE | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--<link href="build.css" rel="stylesheet" />-->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+
+<body class="bg-white" x-data="{ activeElement: 'About' }">
+
+    <!-- Navbar-->
+    <header class="z-50 sticky top-0">
+        <nav class="flex content-end items-center justify-between p-6 px-8" aria-label="Global">
+            <a aria-label="Home" href="#">
+                <ul
+                    class="hover:text-teal-900 flex justify-around flex-col -m-2.5 font-bold h-16 w-auto text-2xl md:gap-2 md:flex-row md:h-8 pb-8">
+                    <li>Jane</li>
+                    <li>Doe</li>
+                </ul>
+            </a>
+            <div class="flex justify-center md:justify-center">
+                <ul
+                    class="flex rounded-full bg-white/90 px-3 text-lg font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur">
+                    <li>
+                        <a class="relative block px-3 py-2 transition hover:underline hover:font-bold hover:text-teal-900"
+                            :class="{ 'text-teal-900': activeElement === 'About' }" href="#About"
+                            @click="activeElement = 'About'">About Me
+                        </a>
+                    </li>
+                    <li>
+                        <a class="relative block px-3 py-2 transition hover:underline hover:font-bold hover:text-teal-900"
+                            :class="{ 'text-teal-900': activeElement === 'Skills' }" href="#Skills"
+                            @click="activeElement = 'Skills'">Skills
+                        </a>
+                    </li>
+                    <li>
+                        <a class="relative block px-3 py-2 transition hover:underline hover:font-bold hover:text-teal-900"
+                            :class="{ 'text-teal-900': activeElement === 'Projects' }" href="#Projects"
+                            @click="activeElement = 'Projects'">Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a class="relative block px-3 py-2 transition hover:underline hover:font-bold hover:text-teal-900"
+                            :class="{ 'text-teal-900': activeElement === 'Recommendations' }" href="#Recommendations"
+                            @click="activeElement = 'Recommendations'">Recommendations
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="fixed right-10 bottom-10 z-50 p-2 rounded-full text-white bg-teal-900">
+        <a href="#">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18">
+                </path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- About content -->
+    <main class="flex-auto mt-5 md:mt-10" id="About">
+        <div class="mx-auto w-full max-w-7xl lg:px-8">
+            <div
+                class="relative px-4 sm:px-8 lg:px-12 mx-auto max-w-2xl lg:max-w-5xl grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+                <div class="lg:pl-20 max-w-xs px-2.5 lg:max-w-none">
+                    <img alt="Profile picture" loading="lazy" width="800" height="800" decoding="async" data-nimg="1"
+                        class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                        sizes="(min-width: 1024px) 32rem, 20rem" src="./img.jpeg" />
+                </div>
+                <!-- About profile -->
+                <div class="lg:order-first lg:row-span-2">
+                    <h1 class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+                        I'm Jane DOE, designer and developer.
+                    </h1>
+                    <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+                        <p>
+                            I am a passionate designer and developer with a love for
+                            creating intuitive and engaging digital experiences. I have
+                            a strong background in both design and development, allowing
+                            me to bring a unique perspective to each project.
+                        </p>
+                        <p>
+                            My journey in design and development began at a young age,
+                            and I have been honing my skills ever since. I am always
+                            looking for new challenges and opportunities to grow and
+                            learn.
+                        </p>
+                        <p>
+                            In my spare time, I enjoy exploring new technologies,
+                            reading about design trends, and working on personal
+                            projects. I believe in lifelong learning and strive to
+                            continuously improve my skills and knowledge.
+                        </p>
+                    </div>
+                </div>
+                <!-- Socials list -->
+                <ul role="list" class="block lg:pl-20">
+                    <li class="flex">
+                        <a class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-900 dark:text-zinc-200 dark:hover:text-teal-900"
+                            href="#IDontHaveX">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"
+                                class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-900">
+                                <path
+                                    d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z">
+                                </path>
+                            </svg>
+                            <span class="ml-4">Follow on X</span>
+                        </a>
+                    </li>
+                    <li class="mt-4 flex">
+                        <a class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-900 dark:text-zinc-200 dark:hover:text-teal-900"
+                            href="#IDontHaveInstagram">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"
+                                class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-900">
+                                <path
+                                    d="M12 3c-2.444 0-2.75.01-3.71.054-.959.044-1.613.196-2.185.418A4.412 4.412 0 0 0 4.51 4.511c-.5.5-.809 1.002-1.039 1.594-.222.572-.374 1.226-.418 2.184C3.01 9.25 3 9.556 3 12s.01 2.75.054 3.71c.044.959.196 1.613.418 2.185.23.592.538 1.094 1.039 1.595.5.5 1.002.808 1.594 1.038.572.222 1.226.374 2.184.418C9.25 20.99 9.556 21 12 21s2.75-.01 3.71-.054c.959-.044 1.613-.196 2.185-.419a4.412 4.412 0 0 0 1.595-1.038c.5-.5.808-1.002 1.038-1.594.222-.572.374-1.226.418-2.184.044-.96.054-1.267.054-3.711s-.01-2.75-.054-3.71c-.044-.959-.196-1.613-.419-2.185A4.412 4.412 0 0 0 19.49 4.51c-.5-.5-1.002-.809-1.594-1.039-.572-.222-1.226-.374-2.184-.418C14.75 3.01 14.444 3 12 3Zm0 1.622c2.403 0 2.688.009 3.637.052.877.04 1.354.187 1.67.31.421.163.72.358 1.036.673.315.315.51.615.673 1.035.123.317.27.794.31 1.671.043.95.052 1.234.052 3.637s-.009 2.688-.052 3.637c-.04.877-.187 1.354-.31 1.67-.163.421-.358.72-.673 1.036a2.79 2.79 0 0 1-1.035.673c-.317.123-.794.27-1.671.31-.95.043-1.234.052-3.637.052s-2.688-.009-3.637-.052c-.877-.04-1.354-.187-1.67-.31a2.789 2.789 0 0 1-1.036-.673 2.79 2.79 0 0 1-.673-1.035c-.123-.317-.27-.794-.31-1.671-.043-.95-.052-1.234-.052-3.637s.009-2.688.052-3.637c.04-.877.187-1.354.31-1.67.163-.421.358-.72.673-1.036.315-.315.615-.51 1.035-.673.317-.123.794-.27 1.671-.31.95-.043 1.234-.052 3.637-.052Z">
+                                </path>
+                                <path
+                                    d="M12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm0-7.622a4.622 4.622 0 1 0 0 9.244 4.622 4.622 0 0 0 0-9.244Zm5.884-.182a1.08 1.08 0 1 1-2.16 0 1.08 1.08 0 0 1 2.16 0Z">
+                                </path>
+                            </svg>
+                            <span class="ml-4">Follow on Instagram</span>
+                        </a>
+                    </li>
+                    <li class="mt-4 flex">
+                        <a class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-900 dark:text-zinc-200 dark:hover:text-teal-900"
+                            href="IDontHaveGithubIMeanIdoButIdontwanttorn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"
+                                class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-900">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12 2C6.475 2 2 6.588 2 12.253c0 4.537 2.862 8.369 6.838 9.727.5.09.687-.218.687-.487 0-.243-.013-1.05-.013-1.91C7 20.059 6.35 18.957 6.15 18.38c-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.538 1.051.9 1.551 2.338 1.116 2.912.846.088-.666.35-1.115.638-1.371-2.225-.256-4.55-1.14-4.55-5.062 0-1.115.387-2.038 1.025-2.756-.1-.256-.45-1.307.1-2.717 0 0 .837-.269 2.75 1.051.8-.23 1.65-.346 2.5-.346.85 0 1.7.115 2.5.346 1.912-1.333 2.75-1.05 2.75-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.562 5.062.362.32.675.936.675 1.897 0 1.371-.013 2.473-.013 2.82 0 .268.188.589.688.486a10.039 10.039 0 0 0 4.932-3.74A10.447 10.447 0 0 0 22 12.253C22 6.588 17.525 2 12 2Z">
+                                </path>
+                            </svg>
+                            <span class="ml-4">Follow on GitHub</span>
+                        </a>
+                    </li>
+                    <li class="mt-4 flex">
+                        <a class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-900 dark:text-zinc-200 dark:hover:text-teal-900"
+                            href="#Idontexist">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"
+                                class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-900">
+                                <path
+                                    d="M18.335 18.339H15.67v-4.177c0-.996-.02-2.278-1.39-2.278-1.389 0-1.601 1.084-1.601 2.205v4.25h-2.666V9.75h2.56v1.17h.035c.358-.674 1.228-1.387 2.528-1.387 2.7 0 3.2 1.778 3.2 4.091v4.715zM7.003 8.575a1.546 1.546 0 01-1.548-1.549 1.548 1.548 0 111.547 1.549zm1.336 9.764H5.666V9.75H8.34v8.589zM19.67 3H4.329C3.593 3 3 3.58 3 4.297v15.406C3 20.42 3.594 21 4.328 21h15.338C20.4 21 21 20.42 21 19.703V4.297C21 3.58 20.4 3 19.666 3h.003z">
+                                </path>
+                            </svg>
+                            <span class="ml-4">Follow on LinkedIn</span>
+                        </a>
+                    </li>
+                    <li class="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40 flex">
+                        <a class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-900 dark:text-zinc-200 dark:hover:text-teal-900"
+                            href="mailto:jane.doe@coursera.com">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"
+                                class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-900">
+                                <path fill-rule="evenodd"
+                                    d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z">
+                                </path>
+                            </svg>
+                            <span class="ml-4">jane.doe@coursera.com</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+
+    <div class="mx-auto px-6 max-w-6xl text-gray-500">
+        <!-- Skills -->
+        <section id="Skills">
+            <div class="mx-auto mt-32 max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl lg:mx-0">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        Skills
+                    </h2>
+                    <p class="mt-2 text-lg leading-8 text-gray-600">
+                        I have a strong experience with these
+                    </p>
+                </div>
+                <!-- Skills List -->
+                <div class="mt-5 gap-10 flex flex-wrap justify-center" x-data="{ 
+          items: [
+          { id: 1, name: 'React', exp: '1.5 years', img: 'https://www.svgrepo.com/show/503536/react.svg' },
+          { id: 2, name: 'HTML', exp: '6 years', img: 'https://www.svgrepo.com/show/508839/html5-02.svg' },
+          { id: 3, name: 'CSS', exp: '2 years', img: 'https://www.svgrepo.com/show/508795/css3-02.svg' },
+          { id: 4, name: 'JavaScript', exp: '6 years', img: 'https://www.svgrepo.com/show/512400/javascript-155.svg' },
+          { id: 8, name: 'PHP', exp: '7 years', img: 'https://www.svgrepo.com/show/508931/php01.svg' },
+          { id: 9, name: 'NodeJS', exp: '4 years', img: 'https://www.svgrepo.com/show/473736/nodejs.svg' },
+          { id: 13, name: 'SQL', exp: '7 years', img: 'https://www.svgrepo.com/show/341068/sql.svg' },
+          { id: 14, name: 'Docker', exp: '1.5 years', img: 'https://www.svgrepo.com/show/448401/docker.svg' },
+          { id: 15, name: 'Docker', exp: '1 month', img: 'https://www.svgrepo.com/show/448486/kubernetes.svg' },
+          ]
+          }">
+                    <template x-for="i in items">
+                        <div :key="i.id"
+                            class="border border-blue-500/10 flex flex-col items-center justify-center text-center p-3 rounded-lg m-2">
+                            <img :src="i.img" class="h-10 mb-2" :alt="i.name" />
+                            <p class="text-base">
+                                <span x-text="i.name"></span> <br /><span x-text="i.exp"></span>
+                            </p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </section>
+        <!-- Projects -->
+        <section id="Projects">
+            <div class="mx-auto mt-32 max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl lg:mx-0">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        Projects
+                    </h2>
+                    <p class="mt-2 text-lg leading-8 text-gray-600">
+                        I built these
+                    </p>
+                </div>
+                <div class="mt-4 mx-auto max-w-xl px-6 lg:mx-0">
+                    <div>
+                        <h4 class="text-md font-semibold">Chessea</h4>
+                        <p class="text-sm text-gray-600">
+                            Chess analysis tool that helps players improve their game.
+                        </p>
+                        <ul class="list-disc list-inside text-sm">
+                            <li>
+                                Designed and developed the front-end using NextJS and Tailwind CSS.
+                            </li>
+                            <li>
+                                Integrated with the Stockfish chess engine to provide real-time
+                                analysis.
+                            </li>
+                            <li>
+                                Received positive feedback from users and chess communities.
+                            </li>
+
+                        </ul>
+                    </div>
+                    <hr class="my-5 w-10/12">
+                    <div>
+                        <h4 class="text-md font-semibold">Webuilder</h4>
+                        <p class="text-sm text-gray-600">
+                            NoCode Web development platform that simplifies the process of building
+                            websites.
+                        </p>
+                        <ul class="list-disc list-inside text-sm">
+                            <li>
+                                Implemented drag-and-drop functionality for building websites.
+                            </li>
+                            <li>
+                                Launched the platform to positive reviews and user feedback.
+                            </li>
+                            <li>
+                                Integrated with various APIs to enhance functionality.
+                            </li>
+                        </ul>
+                    </div>
+                    <hr class="my-5 w-10/12">
+                    <div>
+                        <h4 class="text-md font-semibold">Rocket</h4>
+                        <p class="text-sm text-gray-600">
+                            Rocket tracking app that provides real-time information on upcoming
+                            launches.
+                        </p>
+                        <ul class="list-disc list-inside text-sm">
+                            <li>
+                                Developed the front-end using React and Tailwind CSS.
+                            </li>
+                            <li>
+                                Integrated with the SpaceX API to display launch data.
+                            </li>
+                            <li>
+                                Featured on Product Hunt and received positive reviews.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Recommendations -->
+        <section class="mx-auto mt-32 px-6 lg:px-8" id="Recommendations">
+            <div class="mx-auto max-w-2xl lg:mx-0">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                    Recommendations
+                </h2>
+                <p class="mt-2 text-lg leading-8 text-gray-600">
+                    What people say about me
+                </p>
+            </div>
+            <div x-data="{
+            newElement: {},
+        elements: [
+            {name: 'Sara Lin', org: 'Project Manager / CSolutions Inc', message: 'Jane is a highly motivated developer who excels in fast-paced environments. Her innovative solutions and commitment to quality have significantly impacted our project\'s success.'},
+            {name: 'Michael Roberts', org: 'Lead Developer / ByteSolutions LLC', message: 'Jane has shown exceptional skill and dedication as a developer at ByteSolutions. Her ability to quickly master new technologies and contribute to complex projects has been outstanding.'},
+            {name: 'Samantha Reid', org: 'Co-Founder / Cfx.re', message: 'Jane is an outstanding developer whose contributions have been vital to our success at Cfx.re. Their expertise in software development, coupled with a proactive approach to overcoming challenges.'}
+        ] 
+        }">
+                <div
+                    class="mx-auto max-w-6xl gap-x-8 gap-y-16 border-t border-gray-200 pt-8 sm:mt-5 sm:pt-8 lg:mx-0 lg:max-w-none flex justify-center flex-wrap">
+                    <!-- loop -->
+                    <template x-for="({name, org, message}, index) in elements">
+                        <blockquote :key="index" class="flex max-w-md flex-col items-start justify-between w-full">
+                            <cite class="group relative border-l-2">
+                                <p class="ml-2 line-clamp-3 text-sm leading-6 text-gray-600" x-text="message"></p>
+                            </cite>
+                            <footer class="relative mt-2 flex items-center gap-x-4">
+                                <div class="text-sm leading-6">
+                                    <p class="font-semibold text-gray-900" x-text="name"></p>
+                                    <p class="text-gray-600" x-text="org"></p>
+                                </div>
+                            </footer>
+                        </blockquote>
+                    </template>
+                </div>
+                <!-- Recommendations Form -->
+                <div class="isolate bg-white px-6 sm:py-16 lg:px-8">
+                    <form class="mx-auto max-w-xl"
+                        @submit.prevent="submitRec(elements, newElement); newElement = {}">
+                        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                            <div>
+                                <label for="fullname" class="block text-sm font-semibold leading-6 text-gray-900">Full
+                                    Name</label>
+                                <div class="mt-2.5">
+                                    <input x-model="newElement.name" type="text" name="fullname" id="fullname"
+                                        autocomplete="given-name" maxlength="24"
+                                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        required />
+                                </div>
+                            </div>
+                            <div>
+                                <label for="company"
+                                    class="block text-sm font-semibold leading-6 text-gray-900">Company</label>
+                                <div class="mt-2.5">
+                                    <input x-model="newElement.org" type="text" name="company" id="company"
+                                        autocomplete="organization" maxlength="32"
+                                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        required />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label for="message"
+                                    class="block text-sm font-semibold leading-6 text-gray-900">Message</label>
+                                <div class="mt-2.5">
+                                    <textarea x-model="newElement.message" name="message" id="message" rows="2"
+                                        maxlength="250"
+                                        class="block resize-none w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        required></textarea>
+                                </div>
+                            </div>
+                            <label class="text-sm whitespace-nowrap text-gray-600">
+                                By sending the form, you agree to appear on our website
+                            </label>
+                            <div class="col-span-2">
+                                <button type="submit"
+                                    class="block mt-5 w-full rounded-md bg-teal-900 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-teal-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function submitRec(elements, newElement) {
+            if (confirm("Thank you for submitting a recommendation!")) {
+                elements.push(newElement);
+            }
+        }
+    </script>
+</body>
+
+</html>
