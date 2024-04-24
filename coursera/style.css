@@ -26,6 +26,8 @@ body {
 .topmenu:hover {
   color: white;
   /* Add the styles here */
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .topdiv {
@@ -37,6 +39,8 @@ body {
   float: left;
   padding-left: 2cm;
   /* Add the styles here */
+  font-size: 30px;
+  color:#fff;
 }
 
 .profile_name .contact_info {
@@ -106,6 +110,7 @@ h2 {
 .profile_image {
   width: 550px;
   height: fit-content;
+  border-radius: 20px;
   vertical-align: middle;
   margin: 5px;
 }
