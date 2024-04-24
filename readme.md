@@ -7,7 +7,7 @@ Course : [Introduction to Web Development with HTML, CSS, JavaScript](https://ww
 Part of [IBM Full Stack Software Developer Professional Certificate](https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer)
 
 ## Grade
-Grade received: **__99.06%__**
+Grade received: **__100%__**
 
 ## Conclusion
 Overall, the project was a simple project that allowed me to practice my HTML, CSS, and JavaScript skills. It was a fun project that allowed me to experiment with different styles and functionality. I enjoyed working on the project and look forward to working on more projects in the future. 
